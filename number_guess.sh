@@ -35,7 +35,7 @@ while true; do
     echo "That is not an integer, guess again:"
     continue
   fi
-  
+
   GUESSES=$((GUESSES + 1))
 
   if (( GUESS > SECRET_NUMBER )); then
