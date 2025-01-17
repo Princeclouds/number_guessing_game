@@ -45,7 +45,7 @@ while true; do
   else
     echo "You guessed it in $GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
 
-    # Update database
+    
     NEW_GAMES_PLAYED=$((GAMES_PLAYED + 1))
     if (( GUESSES < BEST_GAME )); then
       UPDATE_USER=$($PSQL "UPDATE users SET games_played=$NEW_GAMES_PLAYED, best_game=$GUESSES WHERE username='$USERNAME'")
