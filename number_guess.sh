@@ -26,8 +26,16 @@ else
   echo "Welcome back, $USERNAME! You have played $GAMES_PLAYED games, and your best game took $BEST_GAME guesses."
 fi
 
-
-
+ # Game logic
+echo "Guess the secret number between 1 and 1000:"
+GUESSES=0
+while true; do
+  read GUESS
+  if [[ ! $GUESS =~ ^[0-9]+$ ]]; then
+    echo "That is not an integer, guess again:"
+    continue
+  fi
+  
   GUESSES=$((GUESSES + 1))
 
   if (( GUESS > SECRET_NUMBER )); then
